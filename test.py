@@ -1,3 +1,4 @@
 import requests
 
-requests.get("")
+html = requests.get("https://prodharry.com")
+print(html.text)
