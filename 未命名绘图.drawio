@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-08-03T13:23:08.829Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="ODmFD1KlUnIsB1XCXYh7" version="21.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-05T17:38:21.265Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="2J4qtB5T5IsUcnRqGRLg" version="21.6.6" type="github">
   <diagram name="第 1 页" id="dt1ydbLvdWKdi6ZFMIxa">
-    <mxGraphModel dx="1509" dy="832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -118,8 +118,161 @@
             <mxPoint x="1930" y="310" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jpHVRqmkEGCWsvxQY14R-1" value="" style="triangle;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="jpHVRqmkEGCWsvxQY14R-1" value="" style="triangle;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="1830" y="430" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-1" value="主线程(UI显示)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="105" y="950" width="165" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-2" value="Main Winodws" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-1">
+          <mxGeometry x="27.5" y="50" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-3" value="start_test()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-1">
+          <mxGeometry x="40" y="110" width="85" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-4" value="测试线程(发送命令)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="870" width="340" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-16" value="Class TestThread" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-4">
+          <mxGeometry x="104" y="350" width="180" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-17" value="def run()&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 开启串口读取线程&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ReaderThread(ser,MAT) as self.device&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;...." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-16">
+          <mxGeometry y="26" width="180" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-18" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.device.test()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-16">
+          <mxGeometry y="110" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-19" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-16">
+          <mxGeometry y="136" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-23" value="MAT(ATProtocol&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-4">
+          <mxGeometry x="74" y="40" width="240" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-24" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-23">
+          <mxGeometry y="26" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-25" value="def handle_event():&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&#x9;自己定义" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-23">
+          <mxGeometry y="52" width="240" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-26" value="def test(self,...)&lt;br&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;for case in self.cases:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 循环cases发送命令&lt;br&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;self.asymc_command(AT+command)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-23">
+          <mxGeometry y="90" width="240" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.001;entryY=0.281;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="DcLxN9_69zLo99ulYXgM-4" source="DcLxN9_69zLo99ulYXgM-18" target="DcLxN9_69zLo99ulYXgM-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.007;entryY=0.091;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DcLxN9_69zLo99ulYXgM-3" target="DcLxN9_69zLo99ulYXgM-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-22" value="串口读取线程" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="880" width="700" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-48" value="Packetizer(Protocol)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-22">
+          <mxGeometry x="370" y="640" width="200" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-49" value="读取二进制包，并提交" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-48">
+          <mxGeometry y="26" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-50" value="def data_received(self, data)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.handle_packet(packet)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-48">
+          <mxGeometry y="52" width="200" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-51" value="def handle_packet(self. packet)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-48">
+          <mxGeometry y="90" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-52" value="LineReader(Packetizer)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-22">
+          <mxGeometry x="380" y="410" width="200" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-53" value="def handle_packet(self, packet)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 重写父类handle_packet()&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# decode解析&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.handle_line(packet.decode())" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-52">
+          <mxGeometry y="26" width="200" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-54" value="def handle_line(self, line)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 进行数据处理" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-52">
+          <mxGeometry y="110" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-55" value="def write_line(self, text)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 向串口写数据&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.transport.write()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-52">
+          <mxGeometry y="150" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-37" value="ReaderThread(Thread)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-22">
+          <mxGeometry x="50" y="550" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-39" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-37">
+          <mxGeometry y="26" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-38" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-37">
+          <mxGeometry y="34" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-47" value="def __init__(self, protocol_factory = MAT)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;#创建协议对象&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.protocol = MAT()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-37">
+          <mxGeometry y="60" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-40" value="def run()&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;data = serial.read()&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.protocol.data_received(data)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-37">
+          <mxGeometry y="130" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="DcLxN9_69zLo99ulYXgM-22" source="DcLxN9_69zLo99ulYXgM-40" target="DcLxN9_69zLo99ulYXgM-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.954;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="DcLxN9_69zLo99ulYXgM-22" source="DcLxN9_69zLo99ulYXgM-51" target="DcLxN9_69zLo99ulYXgM-53">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-43" value="ATProtocol(LineReader)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-22">
+          <mxGeometry x="50" y="52" width="299" height="358" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-44" value="self.events = queue.Queue() 事件队列" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-43">
+          <mxGeometry y="26" width="299" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-67" value="self._events_thread = Thread(target = _run_event)&lt;br&gt;self._events_thread.start()&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 启动线程" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-43">
+          <mxGeometry y="52" width="299" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-68" value="def _run_event():&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;handle_event(self.event.get())&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 不断提取events队列里的数据，提交给handle_event()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-43">
+          <mxGeometry y="100" width="299" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-69" value="def handle_event():&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;自己定义" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-43">
+          <mxGeometry y="170" width="299" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-45" value="def handle_line(self, line):&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 将收到的消息提交到事件队列&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.events.put(line)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-43">
+          <mxGeometry y="210" width="299" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-46" value="def async_command(self, command)：&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 异步发送命令&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;# 不需要等待对方响应&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;self.write_Line(command)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="DcLxN9_69zLo99ulYXgM-43">
+          <mxGeometry y="278" width="299" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="DcLxN9_69zLo99ulYXgM-22" source="DcLxN9_69zLo99ulYXgM-54" target="DcLxN9_69zLo99ulYXgM-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DcLxN9_69zLo99ulYXgM-17" target="DcLxN9_69zLo99ulYXgM-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-42" value="开启串口读取线程" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DcLxN9_69zLo99ulYXgM-41">
+          <mxGeometry x="-0.1996" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-100" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.queue_generic" vertex="1" parent="1">
+          <mxGeometry x="747.34" y="1035" width="233.33" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-101" value="self.events 事件队列" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="747.3399999999999" y="995" width="226" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-117" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.277;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.006;entryY=0.916;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DcLxN9_69zLo99ulYXgM-45" target="DcLxN9_69zLo99ulYXgM-100">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990" y="1095" as="sourcePoint" />
+            <mxPoint x="890" y="1005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-121" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;不断提交数据&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DcLxN9_69zLo99ulYXgM-117">
+          <mxGeometry x="0.1459" y="6" relative="1" as="geometry">
+            <mxPoint x="-19" y="41" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-122" value="队列提取线程" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="870" width="260" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="DcLxN9_69zLo99ulYXgM-68" target="DcLxN9_69zLo99ulYXgM-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcLxN9_69zLo99ulYXgM-124" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="DcLxN9_69zLo99ulYXgM-101" target="DcLxN9_69zLo99ulYXgM-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="1020" as="sourcePoint" />
+            <mxPoint x="800" y="970" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
